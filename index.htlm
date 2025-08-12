@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour Hyacinthe</title>
+<style>
+  body {
+        background: #fef7f9;
+            color: #333;
+                font-family: "Segoe UI", sans-serif;
+                    display: flex;
+                        flex-direction: column;
+                            align-items: center;
+                                justify-content: center;
+                                    height: 100vh;
+                                        text-align: center;
+                                            padding: 20px;
+  }
+    #message {
+            display: none;
+                font-size: 1.1em;
+                    line-height: 1.5;
+                        max-width: 600px;
+                            background: #fff;
+                                padding: 20px;
+                                    border-radius: 12px;
+                                        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                                            animation: fadeIn 1.5s ease forwards;
+    }
+      #hint {
+            font-size: 1.2em;
+                font-weight: bold;
+                    color: #b93e5c;
+      }
+        iframe {
+                display: none; /* masqué, mais le son joue */
+        }
+          @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+          }
+          </style>
+          </head>
+          <body>
+
+          <div id="hint">📱 Secoue ton téléphone pour voir le message</div>
+          <div id="message">
+            <p><strong>Hyacinthe,</strong></p>
+              <p>Il y a des jours où le temps semble s’arrêter juste pour que l’on puisse ressentir chaque instant un peu plus fort. Aujourd’hui, c’est ton jour, et crois-moi, il mérite qu’on s’y attarde.</p>
+                <p>Je pourrais te dire que tu es simplement quelqu’un d’exceptionnel, mais ce serait bien trop fade. Parce que ce que tu dégages… c’est cette sorte de chaleur qu’on ne peut ignorer, un feu doux, brûlant juste assez pour faire frissonner.</p>
+                  <p>Je ne vais pas te cacher que parfois, je me surprends à imaginer ce que ça pourrait être, ce que tu pourrais provoquer, quand tu décides de laisser tomber les barrières. Mais pour aujourd’hui, je te souhaite juste de goûter à cette puissance que tu as en toi, ce magnétisme qui fait tourner les têtes et accélère les cœurs.</p>
+                    <p>Alors profite de tes 17 ans comme il se doit : avec cette intensité, cette envie de tout saisir, tout sentir, tout vivre. Parce que ce que tu offres au monde, c’est un peu comme une promesse — celle d’un désir impossible à ignorer.</p>
+                      <p><strong>Joyeux anniversaire, Hyacinthe.</strong> Tu es ce que personne ne peut vraiment oublier.</p>
+                      </div>
+
+                      <!-- Iframe YouTube masqué -->
+                      <iframe id="player" src="https://www.youtube.com/embed/pqo59FkF_5g?enablejsapi=1&autoplay=0" allow="autoplay"></iframe>
+
+                      <script>
+                      let lastShakeTime = 0;
+                      window.addEventListener('devicemotion', function(e) {
+                            let acc = e.accelerationIncludingGravity;
+                                let totalAcc = Math.abs(acc.x) + Math.abs(acc.y) + Math.abs(acc.z);
+                                    let now = Date.now();
+
+                                        if (totalAcc > 25 && now - lastShakeTime > 1500) {
+                                                    lastShakeTime = now;
+                                                            document.getElementById("message").style.display = "block";
+                                                                    document.getElementById("hint").style.display = "none";
+                                                                            player.playVideo();
+                                        }
+                      });
+
+                      // API YouTube
+                      let tag = document.createElement('script');
+                      tag.src = "https://www.youtube.com/iframe_api";
+                      document.body.appendChild(tag);
+
+                      let player;
+                      function onYouTubeIframeAPIReady() {
+                            player = new YT.Player('player', {
+                                        events: {
+                                                        'onReady': function(event) {
+                                                                            console.log("YouTube prêt");
+                                                        }
+                                        }
+                            });
+                      }
+                      </script>
+
+                      </body>
+                      </html>
+                                                        }
+                                        }
+                            })
+                      }
+                                        }
+                      })
+          }
+        }
+      }
+    }
+  }
